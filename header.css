@@ -1,0 +1,17 @@
+@font-face {
+  font-family: GrowlandBold;
+  src: url(Fonts/Growland\ Bold.otf);
+}
+
+@font-face {
+  font-family: GrowlandBlack;
+  src: url(Fonts/Growland\ Black.otf);
+}
+
+*{
+  margin: 0rem;
+  padding: 0rem;
+  box-sizing: border-box;
+  background-color: black;
+}
+
