@@ -12,6 +12,81 @@
   margin: 0rem;
   padding: 0rem;
   box-sizing: border-box;
+}
+
+body{
   background-color: black;
 }
 
+.navPanel{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 2rem 0rem 2rem;
+  margin-bottom: 0rem;
+}
+
+.navButton{
+  height: 1rem;
+  width: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 0.2rem;
+  overflow: hidden;
+}
+
+.bar{
+  width: 100%;
+  height: 16%;
+  background-color: #FDC31A;
+}
+
+.two{
+  height: 15%;
+}
+
+.nameDisplay{
+  height: 6rem;
+  background-image: linear-gradient(to right,black 0%, #AD4100 20%, #FDC31A 80%, black 100%);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: black;
+  font-family: GrowlandBlack;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.2rem;
+  margin-top: 1rem;
+}
+
+.nameText{
+  background-color: rgba(255, 255, 255, 0);
+  padding: 0rem;
+  margin: 0rem;
+}
+
+.name2{
+  transform: translateY(-0.6rem);
+}
+
+.name1 {
+  transform: translateY(0.7rem);
+}
+
+.skillDisplay{
+  font-family: GrowlandBold;
+  color: #FDC31A;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.skillDisplay div h2 span{
+  color: #AD4100;
+}
