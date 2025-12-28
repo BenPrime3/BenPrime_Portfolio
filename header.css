@@ -1,11 +1,16 @@
 @font-face {
-  font-family: GrowlandBold;
-  src: url(Fonts/Growland\ Bold.otf);
+  font-family: OjujuBold;
+  src: url(Fonts/Ojuju-ExtraBold.ttf);
 }
 
 @font-face {
   font-family: GrowlandBlack;
   src: url(Fonts/Growland\ Black.otf);
+}
+
+@font-face {
+  font-family: GrowlandBold;
+  src: url(Fonts/Growland\ Bold.otf);
 }
 
 *{
@@ -24,6 +29,23 @@ body{
   align-items: center;
   padding: 0.5rem 2rem 0rem 2rem;
   margin-bottom: 0rem;
+  margin-top: 0.2rem;
+}
+
+.navLine{
+  display: none;
+}
+
+.LogoImg{
+  animation: flicker 2s linear -0.2s 1 forwards;
+  opacity: 0;
+  transition: 1s ease;
+  display: flex;
+  align-items: center;
+}
+
+.LogoImg img{
+  transition: 1s ease;
 }
 
 .navButton{
@@ -40,14 +62,22 @@ body{
 
 .bar{
   width: 100%;
-  height: 15%;
-  background-color: #FDC31A;
-  border-radius: 0.5rem;
+  height: 14%;
+  background-color: #fdc41a;
+  animation: flicker 2s linear 1 forwards;
+  opacity: 0;
 }
 
 
 .two{
-  height: 13%;
+  height: 12%;
+  animation: flicker 2s linear -0.2s 1 forwards;
+  opacity: 0;
+}
+
+.three{
+  animation: flicker 1s linear -0.1s 1 forwards;
+  opacity: 0;
 }
 
 .skillContainer{
@@ -68,7 +98,6 @@ body{
   align-items: center;
   font-size: 1.3rem;
   animation: split 25s infinite linear;
-  /* animation: flicker 8s linear infinite forwards; */
 }
 
 .skillText{
@@ -76,9 +105,8 @@ body{
   height: 1rem;
   font-size: 1.2rem;
   width: 40rem;
-  margin-top: 0.2rem;
   color: black;
-  font-family: GrowlandBlack;
+  font-family: OjujuBold;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -91,11 +119,14 @@ body{
   position: absolute;
   display: flex;
   justify-content: center;
+  align-items: center;
+  padding-bottom: 0.4rem;
   flex-wrap: nowrap;
   overflow: hidden;
   backface-visibility: hidden;
   width: 30rem;
-  /* animation: appear 18s infinite linear; */
+  opacity:0;
+  animation: appear 25s infinite linear;
   animation-fill-mode: both;
 }
 
@@ -108,12 +139,12 @@ body{
 }
 
 .skillDisplay::before {
-  background: linear-gradient(to right, black 0%,#6f2b00 10%,#FDC31A 90%, black 100%);
+  background: linear-gradient(95deg, black 0%,#6f2b00 10%,#FDC31A 90%, black 100%);
   animation: fadeA 10s infinite;
 }
 
 .skillDisplay::after {
-  background: linear-gradient(to right,black 0%,#FDC31A 10%,#6f2b00 90%, black 100%);
+  background: linear-gradient(95deg,black 0%,#FDC31A 10%,#6f2b00 90%, black 100%);
   animation: fadeB 10s infinite;
 }
 
@@ -136,6 +167,10 @@ body{
 
 @keyframes split{
   0%{
+    width: 2%;
+    height: 0.05rem;
+  }
+  2%{
     width: 100%;
     height: 2rem;
     overflow: hidden;
@@ -147,11 +182,11 @@ body{
   }
 
   13%{
-    width: 50%;
+    width: 100%;
     height: 0.05rem;
   }
   16%{
-    width: 50%;
+    width: 2%;
     height: 0.05rem;
   }
   17%{
@@ -163,11 +198,11 @@ body{
     height: 2rem;
   }
   30%{
-    width: 50%;
+    width: 100%;
     height: 0.05rem;
   }
   33%{
-    width: 50%;
+    width: 2%;
     height: 0.05rem;
   }
   34%{
@@ -179,11 +214,11 @@ body{
     height: 2rem;
   }
   46%{
-    width: 50%;
+    width: 100%;
     height: 0.05rem;
   }
   49%{
-    width: 50%;
+    width: 2%;
     height: 0.05rem;
   }
   50%{
@@ -195,11 +230,11 @@ body{
     height: 2rem;
   }
   62%{
-    width: 50%;
+    width: 100%;
     height: 0.05rem;
   }
   65%{
-    width: 50%;
+    width: 2%;
     height: 0.05rem;
   }
   66%{
@@ -211,11 +246,11 @@ body{
     height: 2rem;
   }
   78%{
-    width: 50%;
+    width: 100%;
     height: 0.05rem;
   }
   81%{
-    width: 50%;
+    width: 2%;
     height: 0.05rem;
   }
   82%{
@@ -227,16 +262,16 @@ body{
     height: 2rem;
   }
   94%{
-    width: 50%;
+    width: 100%;
     height: 0.05rem;
   }
   98%{
-    width: 50%;
+    width: 2%;
     height: 0.05rem;
   }
   100%{
-    width: 100%;
-    height: 2rem;
+    width: 0%;
+    height: 0.05rem;
     overflow: hidden;
   }
 }
@@ -257,53 +292,195 @@ body{
   100% { transform: rotateX(-360deg); }
 }
 
-/* @keyframes appear {
-  0% { opacity: 0; }
-  5% { opacity: 1; }
-  15% { opacity: 1; }
-  20% { opacity: 0; }
-  100% { opacity: 0; }
-} */
+@keyframes appear {
+  0% { opacity: 1; }
+  12% { opacity: 1; }
+  13% { opacity: 0; }
+  16% { opacity: 0; }
+  17% { opacity: 1; }
+  29% { opacity: 1; }
+  30% { opacity: 0; }
+  33% { opacity: 0; }
+  34% { opacity: 1; }
+  45% { opacity: 1; }
+  46% { opacity: 0; }
+  49% { opacity: 0; }
+  50% { opacity: 1; }
+  61% { opacity: 1; }
+  62% { opacity: 0; }
+  65% { opacity: 0; }
+  66% { opacity: 1; }
+  77% { opacity: 1; }
+  78% { opacity: 0; }
+  81% { opacity: 0; }
+  82% { opacity: 1; }
+  93% { opacity: 1; }
+  94% { opacity: 0; }
+  98% { opacity: 0; }
+  100% { opacity: 1; }
+}
 
-.skill.s1 { animation-delay: 0s; }
-.skill.s2 { animation-delay: -3s; }
-.skill.s3 { animation-delay: -6s; }
-.skill.s4 { animation-delay: -9s; }
-.skill.s5 { animation-delay: -12s; }
-.skill.s6 { animation-delay: -15s; }
+@keyframes flicker{
+  0%{opacity: 0;}
+  50%{opacity: 0;}
+  51%{opacity: 1;}
+  55%{opacity: 1;}
+  56%{opacity: 0;}
+  76%{opacity: 0;}
+  77%{opacity: 1;}
+  81%{opacity: 1;}
+  82%{opacity: 0;}
+  85%{opacity: 0;}
+  86%{opacity: 1;}
+  100%{opacity: 1;}
+}
+
+.introContainer{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.intro{
+  margin-top: 2rem;
+  padding: 2rem;
+  height: 28rem;
+  width: 100%;
+  max-width: 60rem;
+  color:#fdc41a;
+  font-family: GrowlandBold;
+  display: flex;
+  flex-wrap: nowrap;
+  font-size: 1.1rem;
+  transition: 0.5s ease;
+}
+
+.introPhoto img{
+  opacity: 0.1;
+  width: 100%;
+}
+
+.introPhoto{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:#6f2b0000;
+  border-radius: 5rem;
+  margin-top: 2rem;
+  height: 22rem;
+  width: 22rem;
+  overflow: hidden;
+  position: absolute;
+  transition: 0.5s ease;
+  z-index: -1;
+}
 
 
+
+.secondIntro{
+  width: 50%;
+  height: 10rem;
+  transform: translateY(15rem);
+  text-align: right;
+  animation: flicker 1s linear -0.3s 1 forwards;
+  opacity: 0;
+}
+
+.firstIntro{
+  width: 50%;
+  animation: flicker 1s linear -0.1s 1 forwards;
+  opacity: 0;
+}
+
+
+@media screen and (min-width: 700px){
+  .intro{
+    margin-top: 5rem;
+    transition: 0.5s ease;
+    font-size: 1.6rem;
+  }
+
+  .introPhoto{
+    margin-top: 8rem;
+    height: 32rem;
+    width: 32rem;
+    transition: 0.5s ease;
+  }
+}
 
 @media screen and (min-width: 900px) {
-  .nameDisplay {
-      position: relative;
-      height: 3rem;
-      color: black;
-      font-family: GrowlandBlack;
-      display: flex;
-      gap:5rem;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
-      font-size: 2.2rem;
-      margin-top: 1rem;
-      animation: flicker 8s linear infinite forwards;
-    }
+  .navButton{
+    display:none;
+  }
 
-    .nameText {
-      background-color: rgba(255, 255, 255, 0);
-      padding: 0rem;
-      margin: 0rem;
-      
-    }
-  
-    .name2 {
-      transform: translateY(0rem);
-      transform: scale(1.2);
-    }
-  
-    .name1 {
-      transform: translateY(0rem);
-      transform: scale(1.2);
-    }
+  .navLine{
+    display: flex;
+    gap: 1rem;
+  }
+
+  .LogoImg img{
+    transition: 1s ease;
+    opacity: 0;
+    animation: flicker 1s linear 1 forwards;
+    height: 4.5rem;
+  }
+
+  .nav1{
+    opacity: 0;
+    animation: flicker 2s linear -0.2s 1 forwards;
+  }
+  .nav2{
+    opacity: 0;
+    animation: flicker 1s linear 1 forwards;
+  }
+
+  .nav3{
+    opacity: 0;
+    animation: flicker 2s linear 0.1s 1 forwards;
+  }
+
+  .nav4{
+    opacity: 0;
+    animation: flicker 2s linear 0.05s 1 forwards;
+  }
+
+  .navLine div{
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+  }
+
+  .nav5{
+    box-shadow:3px 1.5px 6px 0px #fdc41a7c;
+    opacity: 0;
+    animation: flicker 2s linear 0.08s 1 forwards;
+    padding: 0.8rem;
+  }
+
+  .navLine div a{
+    text-decoration: none;
+    color: #FDC31A;
+  }
+
+
+  .nav5 a{
+    font-weight: bolder;
+    opacity: 0;
+    animation: flicker 2.5s linear 0.08s 1 forwards;
+  }
+
+  .navPanel{
+    padding: 0.5rem 5rem 0.5rem 5rem;
+    font-family: Helvetica, sans-serif;
+  }
+
+  .intro{
+    font-size: 2rem;
+  }
+
+  .introPhoto{
+    margin-top: 10rem;
+  }
+
 }
